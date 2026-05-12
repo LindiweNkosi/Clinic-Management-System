@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Clinic Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+
+     <div class="logo">
+           ClinicEase
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="booking.html">Booking</a>
+            <a href="analytics.html">Analytics</a>
+            <a href="documentation.html">Documentation</a>
+
+        </div>
+    </nav>
+
+<div class="container">
+
+    <h1>Book an Appointment</h1>
+
+    <div class="card">
+
+        <form id="bookingForm">
+
+            <label>Full Name</label>
+            <input type="text" id="name">
+
+            <label>Email Address</label>
+            <input type="email" id="email">
+
+            <label>Phone Number</label>
+            <input type="tel" id="phone">
+
+            <label>Select Service</label>
+
+            <select id="service">
+
+                <option value="">-- Select Service --</option>
+
+                <option>General Consultation</option>
+
+                <option>Dental Care</option>
+
+                <option>Eye Examination</option>
+
+                <option>Training Session</option>
+
+            </select>
+
+            <label>Appointment Date</label>
+            <input type="date" id="date">
+
+            <label>Additional Notes</label>
+            <textarea id="notes"></textarea>
+
+            <button type="submit">
+                Submit Booking
+            </button>
+
+        </form>
+
+        <!-- MESSAGE AREA -->
+        <p id="confirmationMessage"></p>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+<footer>
+
+    <p>
+        ClinicEase © 2026 | Clinic Training & Booking Management System
+    </p>
+
+</footer>
+
+</body>
+</html>
