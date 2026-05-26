@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ClinicEase demo login page with admin, staff, and viewer roles.">
+    <title>ClinicEase Login</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">
+           ClinicEase
+        </div>
+
+            <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+
+        <div class="nav-links" id="navLinks">
+
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="booking.html">Booking</a>
+            <a href="analytics.html">Analytics</a>
+            <a href="documentation.html">Documentation</a>
+
+        </div>
+    </nav>
+
+
+    <div class="container">
+
+        <div class="card">
+
+            <h1>ClinicEase Login</h1>
+
+            <form id="loginForm">
+
+                <label>Username</label>
+                <input type="text" id="username">
+
+                <label>Password</label>
+                <input type="password" id="password">
+
+                <button type="submit">
+                    Login
+                </button>
+
+            </form>
+
+            <p id="loginMessage"></p>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

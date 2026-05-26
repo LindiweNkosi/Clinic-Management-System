@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ClinicEase is a responsive clinic booking, role-based access, and analytics demo built with HTML, CSS, JavaScript, Chart.js, jsPDF, and localStorage.">
+    <title>ClinicEase | Clinic Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- 1. THE GATEKEEPER LOGIN BOX (Shown if not logged in) -->
+    <div id="homepageLoginContainer" class="login-wrapper" style="display: flex;">
+        <div class="card login-box">
+            <h1>ClinicEase Login</h1>
+            <p style="color: #666; margin-bottom: 20px;">Please log in to access the system.</p>
+            
+            <form id="loginForm">
+                <label>Username</label>
+                <input type="text" id="username" required>
+
+                <label>Password</label>
+                <input type="password" id="password" required>
+
+                <button type="submit">Login</button>
+            </form>
+            <p id="loginMessage" style="color: red; margin-top: 10px;"></p>
+        </div>
+    </div>
+
+    <!-- 2. THE ACTUAL APPLICATION (Hidden until logged in) -->
+    <div id="mainContent" style="display: none;">
+        <!-- NAVIGATION -->
+        <nav>
+            <div class="logo">ClinicEase</div>
+            <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="booking.html">Booking</a>
+                <a href="analytics.html">Analytics</a>
+                <a href="documentation.html">Documentation</a>
+                <button class="nav-button" onclick="logout()">Logout</button>
+            </div>
+        </nav>
+
+        <section class="hero">
+            <h1>Welcome to ClinicEase</h1>
+            <p>Smart Clinic Training & Booking Management System</p>
+        </section>
+
+        <!-- MAIN CONTENT -->
+        <div class="container">
+            <div class="card">
+                <h2>System Overview</h2>
+                <p>ClinicEase is designed to improve clinic appointment management, training coordination, and business reporting through an integrated digital system.</p>
+            </div>
+
+            <div class="card">
+                <h2>Core Features</h2>
+                <ul>
+                    <li>Appointment Booking</li>
+                    <li>Training Registration</li>
+                    <li>Interactive Analytics Dashboard</li>
+                    <li>Centralized Documentation</li>
+                    <li>Business Reporting</li>
+                </ul>
+            </div>
+
+            <a class="button" href="booking.html">Book Appointment</a>
+        </div>
+
+        <footer>
+            <p>ClinicEase &copy; 2026 | Clinic Training & Booking Management System</p>
+        </footer>
+    </div>
+
+    <!-- Script execution sequence matters -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Review ClinicEase appointment trends, service demand, status counts, filters, and PDF reports.">
+    <title>ClinicEase | Analytics</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+
+        <div class="logo">
+           ClinicEase
+        </div>
+
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+
+        <div class="nav-links" id="navLinks">
+
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="booking.html">Booking</a>
+            <a href="analytics.html">Analytics</a>
+            <a href="documentation.html">Documentation</a>
+            <button class="nav-button" onclick="logout()">Logout</button>
+
+        </div>
+
+    </nav>
+
+<h1>Clinic Analytics</h1>
+
+<div class="card">
+
+    <h2>Admin Dashboard</h2>
+
+    <h3>
+        The ClinicEase analytics dashboard provides insights into
+        clinic revenue, appointment activity, and service performance.
+    </h3>
+
+</div>
+
+<div class="analytics-container">
+
+    <!-- FILTER SIDEBAR -->
+    <div class="filter-panel">
+
+        <h3>Filters</h3>
+
+        <label>From Date</label>
+        <input type="date" id="fromDate">
+
+        <label>To Date</label>
+        <input type="date" id="toDate">
+
+        <label>Service Type</label>
+        <select id="serviceFilter">
+            <option value="">All Services</option>
+            <option value="General Consultation">General Consultation</option>
+            <option value="Dental Care">Dental Care</option>
+            <option value="Eye Examination">Eye Examination</option>
+            <option value="Training Session">Training Session</option>
+        </select>
+
+        <button onclick="applyFilter()">Apply Filters</button>
+        <button onclick="clearFilter()">Clear</button>
+
+    </div>
+    
+    <!-- MAIN DASHBOARD -->
+    <div class="dashboard-panel">
+
+        <h1>Analytics Dashboard</h1>
+
+        <div class="dashboard-stats">
+            <div class="stat-box">
+                <h3>Total Bookings</h3>
+                <p id="analyticsTotalBookings">0</p>
+            </div>
+
+            <div class="stat-box">
+                <h3>Most Popular Service</h3>
+                <p id="analyticsPopularService">None</p>
+            </div>
+
+            <div class="stat-box">
+                <h3>Upcoming Appointments</h3>
+                <p id="analyticsUpcomingBookings">0</p>
+            </div>
+
+            <div class="stat-box">
+                <h3>Completed Appointments</h3>
+                <p id="analyticsCompletedAppointments">0</p>
+            </div>
+
+            <div class="stat-box">
+                <h3>Cancelled Appointments</h3>
+                <p id="analyticsCancelledAppointments">0</p>
+            </div>
+
+            <div class="stat-box">
+                <h3>Missed Appointments</h3>
+                <p id="analyticsMissedAppointments">0</p>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="bookingChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="serviceChart"></canvas>
+        </div>
+
+    </div>
+
+</div>
+
+<button class="export-btn" onclick="exportPDF()">Export PDF Report</button>
+<button class="export-btn secondary-button" data-admin-only onclick="clearDemoData()">Clear Demo Bookings</button>
+<footer>
+
+    <p>
+        ClinicEase &copy; 2026 | Clinic Training & Booking Management System
+    </p>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+
+
+
+</body>
+</html>
