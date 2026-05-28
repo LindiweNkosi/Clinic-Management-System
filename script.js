@@ -571,8 +571,6 @@ function applyRoleNavigation() {
 
     let analyticsLink = document.querySelector('a[href="analytics.html"]');
     let bookingLink = document.querySelector('a[href="booking.html"]');
-    let adminOnlyItems = document.querySelectorAll("[data-admin-only]");
-
     if (role === "viewer") {
 
         if (analyticsLink) analyticsLink.style.display = "none";
@@ -581,39 +579,6 @@ function applyRoleNavigation() {
 
     if (role === "staff") {
         if (analyticsLink) analyticsLink.style.display = "none";
-    }
-
-    adminOnlyItems.forEach(function(item) {
-        item.style.display = role === "admin" ? "" : "none";
-    });
-}
-
-function clearDemoData() {
-    if (getUserRole() !== "admin") {
-        alert("Only admin users can clear demo bookings.");
-        return;
-    }
-
-    let confirmClear = confirm("Clear all demo bookings from this browser?");
-    if (!confirmClear) return;
-
-    localStorage.removeItem("bookings");
-    editIndex = -1;
-
-    if (document.getElementById("bookingForm")) {
-        document.getElementById("bookingForm").reset();
-    }
-
-    displayBookings();
-
-    if (typeof loadAnalytics === "function") {
-        loadAnalytics();
-    }
-
-    let confMsg = document.getElementById("confirmationMessage");
-    if (confMsg) {
-        confMsg.style.color = "green";
-        confMsg.innerHTML = "Demo bookings cleared.";
     }
 }
 
