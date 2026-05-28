@@ -12,9 +12,9 @@ ClinicEase is a responsive front-end clinic management demo for appointment book
 
 | Role | Username | Password | Access |
 | --- | --- | --- | --- |
-| Admin | `admin` | `1234` | Booking, analytics, reports, and demo data reset |
-| Staff | `staff` | `1234` | Booking management |
-| Viewer | `viewer` | `1234` | Basic read-only navigation |
+| Admin | `admin` | `Admin@ClinicEase2026!` | Booking, analytics, reports, and demo data reset |
+| Staff | `staff` | `Staff@ClinicEase2026!` | Booking management |
+| Viewer | `viewer` | `Viewer@ClinicEase2026!` | Basic read-only navigation |
 
 ## Features
 

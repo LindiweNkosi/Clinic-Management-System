@@ -30,6 +30,21 @@ let editIndex = -1;
 let latestReport = null;
 let reportInterval = null;
 
+const demoUsers = {
+    admin: {
+        password: "Admin@ClinicEase2026!",
+        role: "admin"
+    },
+    staff: {
+        password: "Staff@ClinicEase2026!",
+        role: "staff"
+    },
+    viewer: {
+        password: "Viewer@ClinicEase2026!",
+        role: "viewer"
+    }
+};
+
 // LOAD BOOKINGS WHEN PAGE OPENS
 
 window.onload = function () {
@@ -367,34 +382,13 @@ if (document.getElementById("loginForm")) {
         let password =
             document.getElementById("password").value;
 
-        // ADMIN
-        if (username === "admin" && password === "1234") {
+        let demoUser = demoUsers[username];
+
+        if (demoUser && password === demoUser.password) {
 
             localStorage.setItem("isLoggedIn", "true");
 
-            localStorage.setItem("userRole", "admin");
-
-            window.location.href = "index.html";
-
-        }
-
-        // STAFF
-        else if (username === "staff" && password === "1234") {
-
-            localStorage.setItem("isLoggedIn", "true");
-
-            localStorage.setItem("userRole", "staff");
-
-            window.location.href = "index.html";
-
-        }
-
-        // VIEWER
-        else if (username === "viewer" && password === "1234") {
-
-            localStorage.setItem("isLoggedIn", "true");
-
-            localStorage.setItem("userRole", "viewer");
+            localStorage.setItem("userRole", demoUser.role);
 
             window.location.href = "index.html";
 

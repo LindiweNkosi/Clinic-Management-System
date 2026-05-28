@@ -17,12 +17,12 @@
             <h1>ClinicEase Login</h1>
             <p style="color: #666; margin-bottom: 20px;">Please log in to access the system.</p>
             
-            <form id="loginForm">
+            <form id="loginForm" autocomplete="off">
                 <label>Username</label>
-                <input type="text" id="username" required>
+                <input type="text" id="username" autocomplete="username" required>
 
                 <label>Password</label>
-                <input type="password" id="password" required>
+                <input type="password" id="password" autocomplete="new-password" required>
 
                 <button type="submit">Login</button>
             </form>
